@@ -59,7 +59,7 @@ public class CrptApi {
             postRequest.setEntity(entity);
             try (
                     CloseableHttpClient client = HttpClients.createDefault();
-                    CloseableHttpResponse response = client.execute(new HttpPost());
+                    CloseableHttpResponse response = client.execute(postRequest);
                     InputStream input = new BufferedInputStream(response.getEntity().getContent());
             ) {
                 byte[] responseBytes = input.readAllBytes();
